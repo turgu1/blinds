@@ -184,6 +184,8 @@ void emit_cmd()
       transmitValue(MODEL,         8);
       transmitValue(checksum,      8);
       transmitValue(1,             1);
+      
+      transmitLow(PULSE_SHORT);
     }
 
     // Radio silence at the end of last command.
