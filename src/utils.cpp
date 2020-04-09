@@ -174,16 +174,16 @@ void emit_cmd()
 
       checksum = ((id >> 8) & 0xFF) + 
                  (id & 0xFF) + 
-                 ((cmd << 4) + channels[i]) +
+                 ((cmd_bits[cmd] << 4) + channels[i]) +
                  MODEL - 1;
       checksum = (checksum ^ 0xFF) + 1;
 
-      transmitValue(id,          16);
-      transmitValue(channels[i],  4);
-      transmitValue(cmd,          4);
-      transmitValue(MODEL,        8);
-      transmitValue(checksum,     8);
-      transmitValue(1,            1);
+      transmitValue(id,           16);
+      transmitValue(channels[i],   4);
+      transmitValue(cmd_bits[cmd], 4);
+      transmitValue(MODEL,         8);
+      transmitValue(checksum,      8);
+      transmitValue(1,             1);
     }
 
     // Radio silence at the end of last command.
