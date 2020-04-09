@@ -7,3 +7,4 @@
 .vscode/launch.json
 .vscode/ipch
 data/config.json
+.DS_Store
